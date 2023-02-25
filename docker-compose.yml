@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  webapp:
+    user: 1000:1000 # ${USER_ID}:${GROUP_ID}
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: angular/img
+    container_name: ui.commission
+    ports:
+      - 4203:4200
+    volumes:
+      - ./:/usr/src/app
+    command: ["sleep", "infinity"]
